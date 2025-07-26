@@ -1,0 +1,50 @@
+MeiliSearch Setup Instructions (Windows)
+======================================== 
+
+1. Download MeiliSearch Server
+------------------------------
+- Go to: https://www.meilisearch.com/download
+- Download the Windows version (`meilisearch.exe`).
+- Move `meilisearch.exe` to a folder you can easily access (e.g., your project folder).
+
+2. Start MeiliSearch Server
+---------------------------
+- Open Command Prompt (Win+R, type `cmd`, press Enter).
+- Navigate to the folder where you placed `meilisearch.exe`:
+  Example:
+      cd C:\Users\Herbert\OneDrive\Desktop\E-commerce-2025
+- Start the server with your master key:
+      meilisearch.exe --master-key _r0BYxHVyU7qvaNaedwC0fr9As-fFrgGFYv52hL8IFQ
+- Leave this window open. You should see:
+      Server listening on http://127.0.0.1:7700
+
+3. Install Python Client
+------------------------
+- Open a new Command Prompt or use your IDE's terminal.
+- Make sure you are in your project directory.
+- Run:
+      pip install meilisearch
+
+4. Run the Data Indexing Script
+-------------------------------
+- Ensure `dataset.json` and `big_data.py` are in your project folder.
+- In your terminal, run:
+      python big_data.py
+- The script will:
+    - Connect to MeiliSearch
+    - Upload your dataset
+    - Print sample search results
+
+5. Troubleshooting
+------------------
+- If you see connection errors, make sure the MeiliSearch server is running and listening on port 7700.
+- If you see `ModuleNotFoundError: No module named 'meilisearch'`, make sure you ran `pip install meilisearch` in the correct Python environment.
+
+6. Access MeiliSearch Web UI (Optional)
+---------------------------------------
+- Open your browser and go to: http://localhost:7700
+- You can explore your indexes and documents here.
+
+---
+
+For more help, see: https://www.meilisearch.com/docs/introduction/quick_start 
